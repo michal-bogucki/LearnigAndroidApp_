@@ -1,27 +1,23 @@
 package com.learnig.android.app.feature.characterlistfragment
 
 
-import android.hardware.SensorManager
-import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.NavHostFragment
-import com.learnig.android.app.R
+import com.learnig.android.app.base.BaseFragment
+import com.learnig.android.app.databinding.FragmentCharactersListBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class CharacterListFragment : Fragment() {
-    private val viewModel:CharacterListViewModel by viewModels()
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        val inflate = inflater.inflate(R.layout.fragment_calibration_dialog, container, false)
-        return inflate
-    }
+class CharacterListFragment :
+    BaseFragment<FragmentCharactersListBinding, CharacterListViewModel>() {
+    override val viewModelApp: CharacterListViewModel by viewModels()
+    override fun getViewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ) = FragmentCharactersListBinding.inflate(inflater, container, false)
+
 
     companion object {
         fun newInstance(): CharacterListFragment {

@@ -19,7 +19,7 @@ class EpisodeListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val inflate = inflater.inflate(R.layout.fragment_calibration_dialog, container, false)
+        val inflate = inflater.inflate(R.layout.fragment_location_list, container, false)
         return inflate
     }
 

@@ -18,7 +18,7 @@ class LocationFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val inflate = inflater.inflate(R.layout.fragment_calibration_dialog, container, false)
+        val inflate = inflater.inflate(R.layout.fragment_location, container, false)
         return inflate
     }
 

@@ -4,7 +4,7 @@ import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.learnig.android.app.base.BaseAdapter
 import com.learnig.android.app.base.GenericItemDiffUtil
-import com.learnig.android.app.data.models.Character
+import com.learnig.android.app.data.models.character.Character
 import com.learnig.android.app.data.models.Item
 import com.learnig.android.app.databinding.ItemCharacterBinding
 
@@ -25,7 +25,7 @@ class CharacterAdapter : BaseAdapter<Item, ItemCharacterBinding>(GenericItemDiff
             item as Character
             binding.characterName.text = item.name
             binding.characterStatus.text = item.status
-            Glide.with(itemView).load(item.url).into(binding.characterImage)
+            Glide.with(itemView).load(item.image).into(binding.characterImage)
 
         }
     }

@@ -1,25 +1,29 @@
 package com.learnig.android.app.data.remoteapi
 
 
-import com.learnig.android.app.data.models.Character
 import com.learnig.android.app.data.models.Episode
 import com.learnig.android.app.data.models.Location
+import com.learnig.android.app.data.models.character.CharacterApi
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface RickAndMortyService {
 
-    @GET("character")
-    suspend fun getCharacters(): Response<Character>
+    @GET("/api/character")
+    suspend fun getCharacters(): Response<CharacterApi>
 
-    @GET("location")
-    suspend fun getLocations(): Response<Location>
+    @GET("/api/character")
+    suspend fun getNextCharacters(@Query("page") page: String): Response<CharacterApi>
 
-    @GET("episode")
-    suspend fun getEpisodes(): Response<Episode>
+    @GET("/api/location")
+    suspend fun getLocations(): Response<List<Location>>
+
+    @GET("/api/episode")
+    suspend fun getEpisodes(): Response<List<Episode>>
 
 
     companion object {
-        const val API_URL = "https://rickandmortyapi.com/api/"
+        const val API_URL = "https://rickandmortyapi.com/"
     }
 }

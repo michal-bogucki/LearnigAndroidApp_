@@ -9,7 +9,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import com.learnig.android.app.data.dao.CharacterDao
 import com.learnig.android.app.data.dao.EpisodeDao
 import com.learnig.android.app.data.dao.LocationDao
-import com.learnig.android.app.data.models.Character
+import com.learnig.android.app.data.models.character.Character
 import com.learnig.android.app.data.models.Converters
 import com.learnig.android.app.data.models.Episode
 import com.learnig.android.app.data.models.Location

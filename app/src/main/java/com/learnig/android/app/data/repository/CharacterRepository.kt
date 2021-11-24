@@ -11,10 +11,14 @@ import retrofit2.Response
 import javax.inject.Inject
 import javax.inject.Singleton
 
-@Singleton
-class CharacterRepository @Inject constructor(val rickAndMortyService: RickAndMortyService,val characterDao: CharacterDao) {
+interface CharacterRepositoryInterface{
+    fun getCharacterList(): Flow<Resource<List<Character>>>
+}
 
-    fun getCharacterList(): Flow<Resource<List<Character>>> {
+
+class CharacterRepository @Inject constructor(val rickAndMortyService: RickAndMortyService,val characterDao: CharacterDao):CharacterRepositoryInterface {
+
+    override fun getCharacterList(): Flow<Resource<List<Character>>> {
         return object : NetworkBoundRepository<List<Character>, CharacterApi>() {
             override suspend fun saveRemoteData(characterApi: CharacterApi) {
                 characterDao.insertListCharacter(characterApi.results)

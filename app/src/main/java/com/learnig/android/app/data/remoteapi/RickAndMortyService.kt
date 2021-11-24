@@ -10,20 +10,17 @@ import retrofit2.http.Query
 
 interface RickAndMortyService {
 
-    @GET("/api/character")
+    @GET("Character.json")
     suspend fun getCharacters(): Response<CharacterApi>
 
-    @GET("/api/character")
-    suspend fun getNextCharacters(@Query("page") page: String): Response<CharacterApi>
-
-    @GET("/api/location")
+    @GET("Location.json")
     suspend fun getLocations(): Response<List<Location>>
 
-    @GET("/api/episode")
+    @GET("Episode.json")
     suspend fun getEpisodes(): Response<List<Episode>>
 
 
     companion object {
-        const val API_URL = "https://rickandmortyapi.com/"
+        const val API_URL = "https://michal-bogucki.github.io/"
     }
 }

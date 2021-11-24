@@ -35,8 +35,4 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel> : Fragment() {
 
     protected abstract fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?): VB
 
-    companion object {
-        private const val TAG_PROGRESS_DIALOG = "progress_dialog"
-        private const val TAG_ERROR_DIALOG = "error_dialog"
-    }
 }

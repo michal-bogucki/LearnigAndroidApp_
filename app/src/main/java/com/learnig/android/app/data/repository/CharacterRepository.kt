@@ -9,10 +9,10 @@ import com.learnig.android.app.data.remoteapi.RickAndMortyService
 import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
 import javax.inject.Inject
-import javax.inject.Singleton
 
 interface CharacterRepositoryInterface{
     fun getCharacterList(): Flow<Resource<List<Character>>>
+    fun getCharacterById(characterId: Int): Flow<Character>
 }
 
 
@@ -34,4 +34,6 @@ class CharacterRepository @Inject constructor(val rickAndMortyService: RickAndMo
             override fun shouldFetch(data: List<Character>?) = true
         }.asFlow()
     }
+
+    override fun getCharacterById(characterId: Int) =characterDao.getCharacterById(characterId)
 }

@@ -6,7 +6,13 @@
     <fragment
         android:id="@+id/characterFragment"
         android:name="com.learnig.android.app.feature.characterfragment.CharacterFragment"
-        android:label="CharacterFragment" />
+        android:label="CharacterFragment">
+        <argument
+            android:name="characterId"
+            app:argType="integer"
+            android:defaultValue="-1"
+            app:nullable="false"/>
+    </fragment>
     <fragment
         android:id="@+id/episodeFragment"
         android:name="com.learnig.android.app.feature.episodefragment.EpisodeFragment"
@@ -23,7 +29,11 @@
     <fragment
         android:id="@+id/characterListFragment"
         android:name="com.learnig.android.app.feature.characterlistfragment.CharacterListFragment"
-        android:label="CharacterListFragment" />
+        android:label="CharacterListFragment" >
+        <action
+            android:id="@+id/action_characterListFragment_to_characterFragment"
+            app:destination="@id/characterFragment" />
+    </fragment>
     <fragment
         android:id="@+id/locationListFragment"
         android:name="com.learnig.android.app.feature.locationlistfragment.LocationListFragment"

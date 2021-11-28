@@ -16,5 +16,9 @@ interface CharacterDao:BaseDao<Character> {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertListCharacter(list: List<Character>)
 
+    @Query("SELECT * FROM ${Character.TABLE_NAME} WHERE id = :id")
+    fun getCharacterById(id:Int): Flow<Character>
+
+
 
 }
